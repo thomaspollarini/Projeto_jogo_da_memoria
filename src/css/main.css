@@ -86,3 +86,12 @@ body {
     transition: 250ms;
     transform: rotateY(0deg);
 }
+
+.item.boxOpen {   
+    transform: rotateY(0deg);
+}
+
+.item.boxOpen::after,
+.item.boxMatch::after {
+    transform: rotateY(180deg);
+}
