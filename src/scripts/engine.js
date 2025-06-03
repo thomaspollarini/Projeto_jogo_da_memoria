@@ -16,13 +16,26 @@ for(let i = 0; i < shuffledEmojis.length; i++) {
 
 
 function handleClick() {
-    if (openCards.length < 2) {
+    if (openCards.length < 2 && !this.classList.contains("boxOpen")) {
         this.classList.add("boxOpen");
         openCards.push(this);
         if (openCards.length === 2) {
-            setTimeout(checkMatch(), 500);
+            setTimeout(checkMatch, 500);
         }
     }
 }
 
-//TODO checkMatch function
+function checkMatch() {
+    if (openCards[0].innerHTML === openCards[1].innerHTML) {
+        openCards.forEach(card => card.classList.add("boxMatch"));
+        openCards = [];
+        if (document.querySelectorAll(".boxMatch").length === shuffledEmojis.length) {
+            setTimeout(() => alert("You win!"), 200);
+        }
+    } else {
+        setTimeout(() => {
+            openCards.forEach(card => card.classList.remove("boxOpen"));
+            openCards = [];
+        }, 500);
+    }
+}
