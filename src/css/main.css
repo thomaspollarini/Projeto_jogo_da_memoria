@@ -11,6 +11,7 @@ body {
     align-items: center;
     min-height: 100svh;
     background-color: var(--primary-color);
+    user-select: none;
 }
 
 .container {
@@ -69,4 +70,19 @@ body {
     align-items: center;
     justify-content: center;
     background-color: white;
+
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 250ms;
+}
+
+.item::after {
+    content:'';
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    backface-visibility: hidden;
+
+    transition: 250ms;
+    transform: rotateY(0deg);
 }
