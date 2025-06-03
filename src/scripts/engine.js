@@ -10,7 +10,7 @@ for(let i = 0; i < shuffledEmojis.length; i++) {
     let box = document.createElement("div");
     box.className = "item";
     box.innerHTML = shuffledEmojis[i];
-    box.onclick = handleClick();
+    box.onclick = handleClick;
     document.querySelector(".game").appendChild(box);
 }
 
