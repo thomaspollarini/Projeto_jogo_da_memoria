@@ -1,0 +1,72 @@
+@import url(./reset.css);
+
+:root {
+    --primary-color: #fc1e8a;
+    --secondary-color: #ec38bc;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    background-color: var(--primary-color);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background: linear-gradient(325deg, #03001e 0%, #7303c0 30%, #ec38bc 70%, #fdeff9 100%);
+    padding: 40px 60px;
+}
+
+.container h2 {
+    font-size: 3em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.reset {
+    padding: 15px 20px;
+    width: 100%;
+    color: black;
+    background-color: white;
+    border: none;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.reset:hover {
+    color: var(--secondary-color);
+    background-color: #262809;
+}
+
+.game {
+    border: 1px solid red;
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
